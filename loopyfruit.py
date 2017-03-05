@@ -52,6 +52,15 @@ apple3 = apples.Apple()
 apple_width = 60
 apple_height = 75
 
+# set initial apple x and y (otherwise the first 3 apples fall at same time)
+apple1.rect.centerx = random.randrange(0, 800)
+apple1.rect.centery = random.randrange(-800, -5)
+apple2.rect.centerx = random.randrange(0, 800)
+apple1.rect.centery = random.randrange(-800, -5)
+apple3.rect.centerx = random.randrange(0, 800)
+apple1.rect.centery = random.randrange(-800, -5)
+
+
 # keeps the following code going until we define game_exit = true and exit
 while not game_exit:
     for event in pygame.event.get():
@@ -60,6 +69,7 @@ while not game_exit:
             game_exit = True
         key = pygame.key.get_pressed()
         # if left/right arrow key pressed move basket left/right
+
         if key[pygame.K_LEFT]:
             x_change = -13
         elif key[pygame.K_RIGHT]:
@@ -73,11 +83,6 @@ while not game_exit:
     # move basket
     basket_x += x_change
     move_basket(basket_x, basket_y)
-
-    # enable x and y positions using function from Apple class
-    apple1.update()
-    apple2.update()
-    apple3.update()
 
     # if basket touches apple score goes up
     # (x, y) is basket top left
@@ -110,6 +115,9 @@ while not game_exit:
         apple1.dy = 6
         apple2.dy = 7
         apple3.dy = 8
+    if score > 100:
+        apple1.dy = 7
+        apple2.dy = 9
 
     # if basket goes off screen bring it back round
     if basket_x > width:
@@ -120,9 +128,13 @@ while not game_exit:
     # use sprite group function to draw the apples on the screen
     apple_group.add(apple1, apple2, apple3)
     apple_group.draw(game_display)
+    
+    # enable x and y positions using function from Apple class
+    apple1.update()
+    apple2.update()
+    apple3.update()
 
     pygame.display.update()
-
 
     # frames per second
     clock.tick(50)
