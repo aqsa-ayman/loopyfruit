@@ -8,7 +8,6 @@ If you hit one you lose!
 - Welcome screen
 - Change the background
 - Introduce the "rotten apples"
-- The apples fall faster if score > 20 but perhaps make it even faster if score > 50 or 100
 
 Made with python and the pygame module. 
 Pixel art made on http://makepixelart.com/free/#
