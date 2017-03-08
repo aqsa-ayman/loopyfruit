@@ -6,8 +6,9 @@ If you hit one you lose!
 
 **To Do:**
 - Welcome screen
-- Change the background
-- Introduce the "rotten apples"
+- Change the background?
+- Introduce the worms
+- High scores  
 
 Made with python and the pygame module. 
 Pixel art made on http://makepixelart.com/free/#
