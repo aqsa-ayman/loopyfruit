@@ -5,7 +5,7 @@ Idea: You control the basket, moving side to side catching apples. As your score
 If you hit one you lose!
 
 Made with python and the pygame module. 
-Pixel art made on http://makepixelart.com/free/#
+Pixel art made on http://makepixelart.com/free/# and http://www.piskelapp.com/
 
 Inspired by sentdex and his pygame development tutorials on youtube. 
 
