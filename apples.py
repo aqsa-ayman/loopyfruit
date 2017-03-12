@@ -19,7 +19,7 @@ class Apple(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
 
         # speed of apples i.e. what we increase position by in each loop
-        self.dy = 4
+        self.dy = 5
 
     def update(self):
 
