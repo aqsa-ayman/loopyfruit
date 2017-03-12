@@ -81,7 +81,7 @@ def main_loop():
 
     # set score in left top corner
     def score_to_screen():
-        myfont = pygame.font.Font("Autumn-in-November", 30)
+        myfont = pygame.font.Font("Autumn in November.ttf", 30)
         score_text = myfont.render("Score: "+str(score), 1, black)
         game_display.blit(score_text, (5, 5))
 
@@ -95,12 +95,14 @@ def main_loop():
         score_list.write(str(score) + "\n")
         score_list.close()
 
+        # if file is not empty
+        if os.stat("highscores.txt").st_size != 0:
         # check for the highest score in the score list
-        max = 0
-        with open('highscores.txt', 'r') as data:
-            for line in data.readlines():
-                if int(line) >= max:
-                    max = int(line)
+            max = 0
+            with open('highscores.txt', 'r') as data:
+                for line in data.readlines():
+                    if int(line) >= max:
+                        max = int(line)
 
         # blank screen first
         game_display.fill(pink)
